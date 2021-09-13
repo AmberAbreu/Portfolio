@@ -1,0 +1,143 @@
+@import 'config';
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  background-color: $primary-color
+}
+
+body {
+  background-color: $primary-color;
+  font-family: $font-stack;
+  line-height: 1.6;
+}
+
+img {
+  width: 100%;
+}
+
+a {
+  text-decoration: none;
+}
+
+.about {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 100%;
+  margin-top: 20px;
+  background-color: $dark-color;
+  padding: 15px;
+  h1 {
+    background-color:$dark-color ;
+  }
+  img {
+    width: 25%;
+    background-color: $dark-color;
+    padding: 20px;
+  }
+  p {
+    background-color: $dark-color;
+  }
+
+  &-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 75%;
+    height: 400px;
+    overflow: scroll;
+    background-color: $dark-color;
+    align-content: center;
+    &-text {
+      width: 55%;
+      background-color: $dark-color
+    }
+  }
+  
+}
+
+.showcase {
+  @include set-background($primary-color);
+  height: 700px;
+  
+  nav {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    
+    ul {
+      display: flex;
+      list-style-type: none;
+    }
+
+    li {
+      padding: 15px;
+      margin-top: 10px;
+    }
+
+    a {
+      color: #fff
+    }
+    a:hover {
+      color: $secondary-color;
+    }
+  }
+
+  &-content {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-top: 50px;
+    img {
+      width: 20%;
+    }
+    h1 {
+      font-size: 50px;
+      line-height: 1.2;
+  
+    }
+    p{
+      margin: 20px 0;
+    }
+  }
+  
+}
+
+.tech-stack {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin: 0 auto;
+  align-items: center;
+  width: 75%;
+  ul {
+    display: flex;
+    list-style-type: none;
+    text-align: center;
+  }
+  li {
+    padding: 15px;
+  }
+  &-technologies {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    justify-content: center;
+    &-card {
+      flex: 0 1 calc(25% - 1em);
+      img {
+        height: 150px;
+        width: 150px;
+      }
+      
+    }
+  }
+}
+
+@import 'utilities';
+@import 'buttons';
+@import 'mobile'
