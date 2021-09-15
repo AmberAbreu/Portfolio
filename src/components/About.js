@@ -8,7 +8,7 @@ export default function About() {
     <div className="about">
       <h1> About Me</h1>
       <div className="about-content">
-        <img src={hero} alt="picture of author" />
+        <img src={hero} alt="author" />
         <div className="about-content-text">
           <p>
             I was born and raised in Brooklyn, NY. I'm a huge foodie and on my

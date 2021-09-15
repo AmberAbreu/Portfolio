@@ -1,11 +1,17 @@
 import * as React from "react"
 import "../sass/style.scss"
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faLinkedin, faTwitter, faGithub} from '@fortawesome/free-brands-svg-icons'
+
 import Link from 'gatsby'
 
 import About from '../components/About'
+import Projects from '../components/Projects'
 
 import hero from '../images/croppedamber.png'
+import coder from '../images/coder.svg'
+import logic from '../images/logic.svg'
 
 import logo from '../images/AmberLogo.png'
 import react from '../images/react.png'
@@ -30,7 +36,7 @@ const Home = () => {
             <ul>
               <li><a href="/">Home</a></li>
               <li><a href="#about">About</a></li>
-              <li><a href="/projects">Projects</a></li>
+              <li><a href="#projects">Projects</a></li>
             </ul>
           </nav>
           
@@ -41,18 +47,25 @@ const Home = () => {
                 Software Engineer.
               </p>
               {/* <a href="#about" className="btn-primary">
-                My Story
-              </a> */}
-              <a href="#" className="btn-secondary">
-                Contact Me
+                About Me
               </a>
+              <a href="#projects" className="btn-secondary">
+                Contact Me
+              </a> */}
+              <a href="https://twitter.com/AmberCanCode" target="_blank"><FontAwesomeIcon icon={faTwitter}/></a>
+              <a href="https://www.linkedin.com/in/amber-abreu/" target="_blank"><FontAwesomeIcon icon={faLinkedin}/></a>
+              <a href="https://github.com/AmberAbreu" target="_blank"><FontAwesomeIcon icon={faGithub}/></a>
             </div>
-            <img src={hero}/>
+          
+            <img src={coder}/>
           </div>
         </div>
       </header>
       <div  id="about">
       <About/>
+      </div>
+      <div  id="projects">
+      <Projects/>
       </div>
       
       <div className="tech-stack">

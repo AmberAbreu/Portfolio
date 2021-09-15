@@ -15,7 +15,13 @@
     "clean": "gatsby clean"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.36",
+    "@fortawesome/free-brands-svg-icons": "^5.15.4",
+    "@fortawesome/free-regular-svg-icons": "^5.15.4",
+    "@fortawesome/free-solid-svg-icons": "^5.15.4",
+    "@fortawesome/react-fontawesome": "^0.1.15",
     "gatsby": "^3.12.1",
+    "gatsby-plugin-fontawesome-css": "^1.1.0",
     "gatsby-plugin-gatsby-cloud": "^3.0.0",
     "gatsby-plugin-sass": "^4.12.0",
     "node-sass": "^6.0.1",
