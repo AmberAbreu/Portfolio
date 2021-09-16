@@ -4,8 +4,10 @@ module.exports = {
     title: "ambers-portfolio",
   },
   plugins: 
+  
   ["gatsby-plugin-gatsby-cloud",
   "gatsby-plugin-sass",
   `gatsby-plugin-fontawesome-css`
-],
+]
+,
 };

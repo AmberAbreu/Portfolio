@@ -2,7 +2,9 @@ import React from 'react'
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTimesCircle} from '@fortawesome/free-regular-svg-icons'
-import { faGithub} from '@fortawesome/free-brands-svg-icons'
+
+import github from '../images/tech/github.svg'
+import heroku from '../images/tech/heroku-icon.svg'
 
 import givEth from '../images/givethhome.png'
 import movieprops from '../images/moviepropshome.png'
@@ -18,34 +20,30 @@ export default function ProjectDetails(props) {
         <div className="pp-content">
           <div className="pp-header">
             <button type="button" className="btn" onClick={()=> props.setTrigger(false)}>
-            <FontAwesomeIcon icon={faTimesCircle} />
-              {/* close */}
+            <FontAwesomeIcon icon={faTimesCircle} className="icon" />
             </button>
             <div className="pp-thumbnail">
               <img src={project.imgUrl} alt={project.name} />
             </div>
-            <h3>App landing page</h3>
+            <h3>{project.name}</h3>
           </div>
 
           <div className="pp-body">
             <div className="description">
               <p>
-                Lorem ipsum, dolor sit amet consctetur adipsiscing elit. ONis ab
-                nobid eaque optio excepturi tempore, cumque porro ex natus
-                repudiandae vero repellendus ipsa possimus illum quisquam hic
-                vitae blanditisiis, alias consequuntur?
+                {project.description}
               </p>
             </div>
             <div className="general-info">
               <ul>
                 <li>
-                  Created: <span>{project.date}</span>
+                  <span>{project.date}</span>
                 </li>
                 <li>
-                  Technologies used: <span>{project.tech}</span>
+                  <span>{project.tech}</span>
                 </li>
-                <li><FontAwesomeIcon icon={faGithub}/>: <a href={project.github} target="_blank"> {project.github} </a> </li>
-                <li>WebpageIcon: {project.website}</li>
+                <a href={project.github}  target="_blank"><img src={github}/></a>
+                <a href={project.website}  target="_blank"><img src={heroku}/></a>
               </ul>
             </div>
           </div>
