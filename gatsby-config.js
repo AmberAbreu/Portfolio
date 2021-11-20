@@ -3,11 +3,9 @@ module.exports = {
     siteUrl: "https://www.yourdomain.tld",
     title: "ambers-portfolio",
   },
-  plugins: 
-  
-  ["gatsby-plugin-gatsby-cloud",
-  "gatsby-plugin-sass",
-  `gatsby-plugin-fontawesome-css`
-]
-,
+  plugins: [
+    "gatsby-plugin-gatsby-cloud",
+    "gatsby-plugin-sass",
+    `gatsby-plugin-fontawesome-css`,
+  ],
 };
