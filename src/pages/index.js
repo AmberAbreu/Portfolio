@@ -1,6 +1,6 @@
 import * as React from "react";
 import "../sass/style.scss";
-import { StaticImage } from "gatsby-plugin-image";
+//simport { StaticImage } from "gatsby-plugin-image";
 
 import Link from "gatsby";
 
@@ -85,7 +85,7 @@ const Home = () => {
               </a>
             </div>
 
-            <StaticImage src="../images/logic.svg" alt="image of Amber" />
+            {/* <StaticImage src="../images/logic.svg" alt="image of Amber" /> */}
           </div>
         </div>
       </header>
