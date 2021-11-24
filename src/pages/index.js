@@ -1,6 +1,6 @@
 import * as React from "react";
 import "../sass/style.scss";
-//simport { StaticImage } from "gatsby-plugin-image";
+import { StaticImage } from "gatsby-plugin-image";
 
 import Link from "gatsby";
 
@@ -14,7 +14,6 @@ import {
   faGithub,
 } from "@fortawesome/free-brands-svg-icons";
 
-import hero from "../images/croppedamber.png";
 import logo from "../images/AmberLogo.png";
 
 const Home = () => {
@@ -22,7 +21,7 @@ const Home = () => {
     <div>
       <nav>
         <div className="logo">
-          <img src={logo} />
+          <img src={logo} alt="logo" />
         </div>
         <ul>
           <li>
@@ -39,7 +38,7 @@ const Home = () => {
       <header className="showcase">
         <div className="container">
           <div className="showcase-content">
-            <div>
+            <div className="showcase-content-words">
               <h1>Amber Abreu</h1>
               <p>
                 I was born and raised in Brooklyn, NY. I'm a huge foodie and on
@@ -53,8 +52,6 @@ const Home = () => {
                 improve the lives and experiences of others just with code, I
                 knew I wanted a career in tech.
               </p>
-
-              <p></p>
 
               <p>
                 Now that I am finished with bootcamp, I am searching for a job
@@ -71,21 +68,34 @@ const Home = () => {
               <a href="#projects" className="btn-secondary">
                 Contact Me
               </a> */}
-              <a href="https://twitter.com/AmberCanCode" target="_blank">
+              <a
+                href="https://twitter.com/amberabreudev"
+                target="_blank"
+                rel="noreferrer"
+              >
                 <FontAwesomeIcon icon={faTwitter} />
               </a>
               <a
                 href="https://www.linkedin.com/in/amber-abreu/"
                 target="_blank"
+                rel="noreferrer"
               >
                 <FontAwesomeIcon icon={faLinkedin} />
               </a>
-              <a href="https://github.com/AmberAbreu" target="_blank">
+              <a
+                href="https://github.com/AmberAbreu"
+                target="_blank"
+                rel="noreferrer"
+              >
                 <FontAwesomeIcon icon={faGithub} />
               </a>
             </div>
-
-            {/* <StaticImage src="../images/logic.svg" alt="image of Amber" /> */}
+            <StaticImage
+              src="../images/croppedamber.png"
+              alt="image of Amber"
+              placeholder="blurred"
+              layout="fixed"
+            />
           </div>
         </div>
       </header>

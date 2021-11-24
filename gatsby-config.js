@@ -7,5 +7,8 @@ module.exports = {
     "gatsby-plugin-gatsby-cloud",
     "gatsby-plugin-sass",
     `gatsby-plugin-fontawesome-css`,
+    `gatsby-plugin-image`,
+    `gatsby-plugin-sharp`,
+    `gatsby-transformer-sharp`,
   ],
 };

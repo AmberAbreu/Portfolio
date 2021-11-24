@@ -19,6 +19,8 @@ img {
 
 a {
   text-decoration: none;
+  margin: 10px;
+  color: black;
 }
 
 .about {
@@ -215,17 +217,13 @@ nav {
 .showcase {
   @include set-background($primary-color);
   height: 700px;
-
   &-content {
-    height: 100%;
     display: flex;
     align-items: center;
     justify-content: space-around;
-
+    flex-direction: row;
     margin-top: 50px;
-    img {
-      width: 50%;
-    }
+
     h1 {
       font-size: 50px;
       line-height: 1.2;
@@ -233,10 +231,9 @@ nav {
     p {
       margin: 20px 0;
     }
-    a {
-      text-decoration: none;
-      margin: 10px;
-      color: black;
+    &-words {
+      flex-direction: column;
+      width: 75%;
     }
   }
 }
