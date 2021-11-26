@@ -1,17 +1,15 @@
-$primary-color: #C4F1EF;
-$secondary-color: #324B4A;
+$primary-color: #c4f1ef;
+$secondary-color: #324b4a;
 $font-stack: Arial, Helvetica, sans-serif;
-$light-color: #C9A48D;
-$dark-color: #A3CFCD;
-$blue: #007DF0;
-$orange: #FFCB56;
-
-
+$light-color: #c9a48d;
+$dark-color: #a3cfcd;
+$blue: #007df0;
+$orange: #ffcb56;
 
 //Set text color based on background
 
 @function set-text-color($color) {
-  @if(lightness($color) > 70) {
+  @if (lightness($color) > 70) {
     @return #333;
   } @else {
     @return #fff;
@@ -22,6 +20,5 @@ $orange: #FFCB56;
 
 @mixin set-background($color) {
   background-color: $color;
-  color: set-text-color(($color))
+  color: set-text-color(($color));
 }
-

@@ -5,10 +5,8 @@ import github from "../images/tech/github.svg";
 import heroku from "../images/tech/heroku-icon.svg";
 
 import Link from "gatsby";
-
 import givEth from "../images/givethhome.png";
 import movieprops from "../images/moviepropshome.png";
-
 import TechStack from "../components/TechStack";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -162,67 +160,26 @@ const Home = () => {
       </header>
 
       <div className="projects">
-        <div className="project">
-          <StaticImage
-            src="../images/givethhome.png"
-            alt="giveth"
-            placeholder="blurred"
-            layout="fixed"
-          />
-
-          {/* {width < 700 ? (
+        {projects.map((project) => (
+          <div className="project">
+            <img className="homepage" src={project.imgUrl} alt={project.name} />
+            {width < 700 ? (
               <div className="links">
-                <a className="phone-btn" href={curProj.github} target="_blank">
-                  <img src={github} />
-                </a>
-                <a className="phone-btn" href={curProj.website} target="_blank">
-                  <img src={heroku} />
+                <a href={curProj.github} target="_blank">
+                  <FontAwesomeIcon icon={faGithub} />
                 </a>
               </div>
             ) : (
-              <div>
-                <button type="button" className="btn-secondary">
-                  Learn more
-                </button>
-                <a href={project.github} target="_blank">
-                  <img src={github} />
+              <div className="project-links">
+                <p>{project.name}</p>
+                <a>
+                  <FontAwesomeIcon icon={faGithub} />
                 </a>
-                <a href={project.website} target="_blank">
-                  <img src={heroku} />
-                </a>
+                <a>Demo</a>
               </div>
-            )} */}
-        </div>
-        <div className="project">
-          <StaticImage
-            src="../images/moviepropshome.png"
-            alt="movieprops"
-            placeholder="blurred"
-            layout="fixed"
-          />
-          {/* {width < 700 ? (
-              <div className="links">
-                <a className="phone-btn" href={curProj.github} target="_blank">
-                  <img src={github} />
-                </a>
-                <a className="phone-btn" href={curProj.website} target="_blank">
-                  <img src={heroku} />
-                </a>
-              </div>
-            ) : (
-              <div>
-                <button type="button" className="btn-secondary">
-                  Learn more
-                </button>
-                <a href={project.github} target="_blank">
-                  <img src={github} />
-                </a>
-                <a href={project.website} target="_blank">
-                  <img src={heroku} />
-                </a>
-              </div>
-            )} */}
-        </div>
+            )}
+          </div>
+        ))}
       </div>
 
       <TechStack />

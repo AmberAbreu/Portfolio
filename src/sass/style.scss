@@ -99,94 +99,14 @@ nav {
   }
 }
 
-.portfolio-popup {
-  color: $secondary-color;
-  position: fixed;
-  left: 0;
-  top: 0;
-  height: 100%;
-  width: 100%;
-  z-index: 200;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  .pp-inner {
-    position: relative;
-    min-width: 100vh;
-    padding: 40px 15px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    .pp-content {
-      background-color: $primary-color;
-      padding: 30px;
-      border-radius: 30px;
-      max-width: 900px;
-      width: 100%;
-      border: solid lighten($primary-color, 50%);
-      backdrop-filter: var(--backgrop-filter-blur);
-      .pp-header {
-        position: relative;
-
-        .btn {
-          height: 40px;
-          width: 40px;
-          padding: 0;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          border-radius: 20px;
-          position: absolute;
-          right: -40px;
-          top: -40px;
-        }
-        .pp-thumbnail {
-          img {
-            border-radius: 10px;
-          }
-          h3 {
-            font-size: 25px;
-            text-transform: capitalize;
-            margin: 20px 0 15px;
-          }
-        }
-      }
-      .pp-body {
-        ul {
-          list-style: none;
-        }
-        .description {
-          margin-bottom: 20px;
-        }
-        .general-info {
-          li {
-            margin-bottom: 10px;
-            font-weight: 300;
-          }
-          img {
-            height: 50px;
-            width: 50px;
-          }
-        }
-      }
-    }
-  }
-}
-
 .projects {
   display: flex;
   flex: 0 1 calc(50% - 1em);
   align-content: center;
   justify-content: center;
   position: relative;
-  button {
+  .project-links {
     display: none;
-  }
-  .phone-btn {
-    img {
-      width: 20px;
-      height: 20px;
-    }
   }
 
   .project:hover {
@@ -200,12 +120,10 @@ nav {
       transition: 0.5s ease-in-out;
     }
 
-    .btn-secondary {
+    .project-links {
       display: inline-block;
       position: absolute;
       top: 50%;
-      border: none;
-      outline: none;
     }
   }
 
