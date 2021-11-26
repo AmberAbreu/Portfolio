@@ -1,5 +1,25 @@
 @import "config";
+@-webkit-keyframes scroll {
+  0% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+  100% {
+    -webkit-transform: translateX(calc(-180px * 8));
+    transform: translateX(calc(-180px * 8));
+  }
+}
 
+@keyframes scroll {
+  0% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+  100% {
+    -webkit-transform: translateX(calc(-180px * 8));
+    transform: translateX(calc(-180px * 8));
+  }
+}
 * {
   box-sizing: border-box;
   margin: 0;
@@ -157,40 +177,43 @@ nav {
 }
 
 .tech-stack {
-  display: flex;
   align-items: center;
-  flex-direction: column;
-  margin: 0 auto;
-  width: 100%;
+  display: flex;
+  justify-content: center;
   color: $secondary-color;
   background-color: $dark-color;
+  &::before,
+  &::after {
+    content: "";
+    height: 128px;
+    position: absolute;
+    width: 120px;
+    z-index: 2;
+  }
+
+  &::after {
+    right: -1px;
+    top: 0;
+    -webkit-transform: rotateZ(180deg);
+    transform: rotateZ(180deg);
+  }
+
+  &::before {
+    left: 0;
+    top: 0;
+  }
   h1 {
     background-color: $dark-color;
   }
-  ul {
-    display: flex;
-    list-style-type: none;
-    text-align: center;
-    width: 50%;
-    margin-top: 20px;
-    margin-bottom: 60px;
-    border-radius: 20px;
-  }
-  li {
-    padding: 15px;
-  }
-  &-technologies {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    justify-content: center;
-    &-card {
-      flex: 0 1 calc(33% - 1em);
-      img {
-        height: 100px;
-        width: 100px;
-      }
-    }
+}
+
+.sliderTrack {
+  -webkit-animation: 3s linear 1s infinite running slidein;
+  animation: 3s linear 1s infinite running slidein;
+  display: flex;
+  width: calc(180px * 16);
+  img {
+    width: 100px;
   }
 }
 

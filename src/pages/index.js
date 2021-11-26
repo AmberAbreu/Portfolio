@@ -4,6 +4,17 @@ import { StaticImage } from "gatsby-plugin-image";
 import github from "../images/tech/github.svg";
 import heroku from "../images/tech/heroku-icon.svg";
 
+import html from "../images/tech/html5.svg";
+import css from "../images/tech/css3.svg";
+import javascript from "../images/tech/javascript.svg";
+import react from "../images/tech/react.svg";
+import sequelize from "../images/tech/sequelize.svg";
+import postgres from "../images/tech/postgresql.svg";
+import express from "../images/tech/expressjs.svg";
+import node from "../images/tech/nodejs.svg";
+import redux from "../images/tech/redux.svg";
+import sass from "../images/tech/sass.svg";
+
 import Link from "gatsby";
 import givEth from "../images/givethhome.png";
 import movieprops from "../images/moviepropshome.png";
@@ -44,6 +55,18 @@ function useWindowDimensions() {
 }
 
 const Home = () => {
+  const technologies = [
+    html,
+    css,
+    javascript,
+    react,
+    redux,
+    postgres,
+    node,
+    express,
+    sequelize,
+    sass,
+  ];
   const [buttonPopup, setButtonPopup] = useState(false);
   const [curProj, setCurProj] = useState("");
   function handleClick(proj) {
@@ -182,7 +205,14 @@ const Home = () => {
         ))}
       </div>
 
-      <TechStack />
+      <div className="tech-stack">
+        <h1>Tech Stack</h1>
+        <div className="sliderTrack">
+          {technologies.map((technology) => (
+            <img src={technology} />
+          ))}
+        </div>
+      </div>
     </div>
   );
 };
