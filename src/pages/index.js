@@ -206,11 +206,12 @@ const Home = () => {
       </div>
 
       <div className="tech-stack">
-        <h1>Tech Stack</h1>
-        <div className="sliderTrack">
-          {technologies.map((technology) => (
-            <img src={technology} />
-          ))}
+        <div className="slider">
+          <div className="sliderTrack">
+            {technologies.map((technology) => (
+              <img src={technology} />
+            ))}
+          </div>
         </div>
       </div>
     </div>

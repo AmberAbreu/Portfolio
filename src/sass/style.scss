@@ -1,25 +1,5 @@
 @import "config";
-@-webkit-keyframes scroll {
-  0% {
-    -webkit-transform: translateX(0);
-    transform: translateX(0);
-  }
-  100% {
-    -webkit-transform: translateX(calc(-180px * 8));
-    transform: translateX(calc(-180px * 8));
-  }
-}
 
-@keyframes scroll {
-  0% {
-    -webkit-transform: translateX(0);
-    transform: translateX(0);
-  }
-  100% {
-    -webkit-transform: translateX(calc(-180px * 8));
-    transform: translateX(calc(-180px * 8));
-  }
-}
 * {
   box-sizing: border-box;
   margin: 0;
@@ -180,11 +160,50 @@ nav {
   align-items: center;
   display: flex;
   justify-content: center;
-  color: $secondary-color;
-  background-color: $dark-color;
+}
+
+@-webkit-keyframes scroll {
+  0% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+  100% {
+    -webkit-transform: translateX(calc(-180px * 8));
+    transform: translateX(calc(-180px * 8));
+  }
+}
+
+@keyframes scroll {
+  0% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+  100% {
+    -webkit-transform: translateX(calc(-180px * 8));
+    transform: translateX(calc(-180px * 8));
+  }
+}
+
+@mixin white-gradient {
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(255, 255, 255, 0) 100%
+  );
+}
+$animationSpeed: 10s;
+
+.slider {
+  box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.125);
+  margin: auto;
+  overflow: hidden;
+  position: relative;
+  height: 128px;
+  width: 100%;
+
   &::before,
   &::after {
-    content: "";
+    @include white-gradient;
     height: 128px;
     position: absolute;
     width: 120px;
@@ -202,19 +221,16 @@ nav {
     left: 0;
     top: 0;
   }
-  h1 {
-    background-color: $dark-color;
+  img {
+    margin: 20px;
   }
 }
 
 .sliderTrack {
-  -webkit-animation: 3s linear 1s infinite running slidein;
-  animation: 3s linear 1s infinite running slidein;
+  -webkit-animation: scroll $animationSpeed linear infinite;
+  animation: scroll $animationSpeed linear infinite;
   display: flex;
-  width: calc(180px * 16);
-  img {
-    width: 100px;
-  }
+  width: 100px;
 }
 
 @import "utilities";
