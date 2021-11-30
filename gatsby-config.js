@@ -16,6 +16,7 @@ module.exports = {
         fonts: [
           `limelight`,
           `Nunito`, // you can also specify font weights and styles
+          "Praise",
         ],
         display: "swap",
       },

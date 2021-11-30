@@ -103,7 +103,7 @@ const Home = () => {
     <div>
       <nav>
         <div className="logo">
-          <img src={logo} alt="logo" />
+          <p>Amber Abreu</p>
         </div>
         <ul>
           <li>
@@ -204,7 +204,7 @@ const Home = () => {
           </div>
         ))}
       </div>
-
+      <p>Tech Stack</p>
       <div className="tech-stack">
         <div className="slider">
           <div className="sliderTrack">

@@ -20,7 +20,7 @@ img {
 a {
   text-decoration: none;
   margin: 10px;
-  color: black;
+  color: $light-color;
 }
 
 .about {
@@ -30,20 +30,20 @@ a {
   justify-content: space-evenly;
   width: 100%;
   margin-top: 20px;
-  background-color: $dark-color;
+  background-color: $primary-color;
   color: $secondary-color;
   padding: 15px;
   h1 {
-    background-color: $dark-color;
+    background-color: $primary-color;
   }
   img {
     width: 300px;
     height: 300px;
-    background-color: $dark-color;
+    background-color: $primary-color;
     padding: 20px;
   }
   p {
-    background-color: $dark-color;
+    background-color: $primary-color;
   }
 
   &-content {
@@ -68,34 +68,40 @@ nav {
   align-content: center;
   align-items: flex-start;
   justify-content: space-between;
-  background-color: $dark-color;
+  background-color: $primary-color;
   overflow: hidden;
   height: 140px;
-  img {
-    background-color: $dark-color;
-  }
   ul {
     display: flex;
     list-style-type: none;
-    background-color: $dark-color;
+    background-color: $primary-color;
   }
 
   li {
     padding: 15px;
     margin-top: 10px;
-    background-color: $dark-color;
+    background-color: $primary-color;
   }
 
   a {
-    color: #fff;
+    color: $light-color;
     text-decoration: none;
-    background-color: $dark-color;
+    background-color: $primary-color;
   }
   a:hover {
     color: $secondary-color;
   }
   a:visited {
     text-decoration: none;
+  }
+}
+
+.logo {
+  font-family: Praise;
+  font-size: 80px;
+  background-color: $secondary-color;
+  p {
+    color: $light-color;
   }
 }
 
@@ -148,6 +154,7 @@ nav {
     }
     p {
       margin: 20px 0;
+      color: $gray;
     }
     &-words {
       flex-direction: column;
@@ -160,6 +167,9 @@ nav {
   align-items: center;
   display: flex;
   justify-content: center;
+  background-color: $gray;
+  height: 200px;
+  margin-bottom: 20px;
 }
 
 @-webkit-keyframes scroll {
@@ -168,8 +178,8 @@ nav {
     transform: translateX(0);
   }
   100% {
-    -webkit-transform: translateX(calc(-180px * 8));
-    transform: translateX(calc(-180px * 8));
+    -webkit-transform: translateX(calc(-180px * 10));
+    transform: translateX(calc(-180px * 10));
   }
 }
 
@@ -179,31 +189,25 @@ nav {
     transform: translateX(0);
   }
   100% {
-    -webkit-transform: translateX(calc(-180px * 8));
-    transform: translateX(calc(-180px * 8));
+    -webkit-transform: translateX(calc(-180px * 10));
+    transform: translateX(calc(-180px * 10));
   }
 }
 
-@mixin white-gradient {
-  background: linear-gradient(
-    to right,
-    rgba(255, 255, 255, 1) 0%,
-    rgba(255, 255, 255, 0) 100%
-  );
-}
-$animationSpeed: 10s;
+$animationSpeed: 40s;
 
 .slider {
   box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.125);
   margin: auto;
   overflow: hidden;
   position: relative;
-  height: 128px;
+  height: 150px;
   width: 100%;
+  background-color: $gray;
 
   &::before,
   &::after {
-    @include white-gradient;
+    content: "";
     height: 128px;
     position: absolute;
     width: 120px;
@@ -223,6 +227,9 @@ $animationSpeed: 10s;
   }
   img {
     margin: 20px;
+    width: 180px;
+    height: 128px;
+    background-color: $gray;
   }
 }
 
@@ -230,7 +237,8 @@ $animationSpeed: 10s;
   -webkit-animation: scroll $animationSpeed linear infinite;
   animation: scroll $animationSpeed linear infinite;
   display: flex;
-  width: 100px;
+  width: calc(180px * 20);
+  background-color: $gray;
 }
 
 @import "utilities";
