@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "../sass/style.scss";
 import { StaticImage } from "gatsby-plugin-image";
-import github from "../images/tech/github.svg";
-import heroku from "../images/tech/heroku-icon.svg";
 
 import html from "../images/tech/html5.svg";
 import css from "../images/tech/css3.svg";
@@ -26,8 +24,11 @@ import {
   faTwitter,
   faGithub,
 } from "@fortawesome/free-brands-svg-icons";
-
-import logo from "../images/AmberLogo.png";
+import {
+  faNewspaper,
+  faEnvelope,
+  faUser,
+} from "@fortawesome/free-solid-svg-icons";
 
 function getWindowDimensions() {
   const { innerWidth: width, innerHeight: height } = window;
@@ -88,9 +89,9 @@ const Home = () => {
     },
     {
       id: 2,
-      name: "MovieProps!",
+      name: "Alacran Digital Services",
       description:
-        "An e-commerce website that allows users to buy famous movie props",
+        "Working as a contributor creating websites for small businesses",
       imgUrl: movieprops,
       date: "July 2021",
       tech: "PostgreSQL, Express, Sequelize, React/Redux, Bootstrap",
@@ -102,18 +103,34 @@ const Home = () => {
   return (
     <div>
       <nav>
-        <div className="logo">
-          <p>Amber Abreu</p>
+        <div>
+          <StaticImage
+            src="../images/logo3.png"
+            alt="logo"
+            placeholder="blurred"
+            layout="fixed"
+            width={125}
+            height={125}
+          />
         </div>
         <ul>
           <li>
-            <a href="/">Home</a>
+            <a href="/">
+              <FontAwesomeIcon icon={faUser} />
+              <p>About</p>
+            </a>
           </li>
           <li>
-            <a href="#about">About</a>
+            <a href="#about">
+              <FontAwesomeIcon icon={faNewspaper} />
+              <p>Blog</p>
+            </a>
           </li>
           <li>
-            <a href="#projects">Projects</a>
+            <a href="#projects">
+              <FontAwesomeIcon icon={faEnvelope} />
+              <p>Contact</p>
+            </a>
           </li>
         </ul>
       </nav>
@@ -121,62 +138,46 @@ const Home = () => {
         <div className="container">
           <div className="showcase-content">
             <div className="showcase-content-words">
-              <h1>Amber Abreu</h1>
-              <p>
-                I was born and raised in Brooklyn, NY. I'm a huge foodie and on
-                my free time you can catch me trying new cuisine.
-              </p>
-
-              <p>
-                My Software Engineer first began in college when I attended my
-                first hackathon. After seeing how groups of people could come
-                together and build full stack applications that could help
-                improve the lives and experiences of others just with code, I
-                knew I wanted a career in tech.
-              </p>
-
-              <p>
-                Now that I am finished with bootcamp, I am searching for a job
-                opportunity that will allow me to grow and learn from great
-                minds. In the meantime, I am following up on my promise to learn
-                something new everyday. Now I am teaching myself Gatsby,
-                GraphQL, and Sass, which is how I am creating this portfolio. I
-                also plan to work on my side projects that include learning
-                React Native, Solidity, and Web3.
-              </p>
-              {/* <a href="#about" className="btn-primary">
-                About Me
-              </a>
-              <a href="#projects" className="btn-secondary">
-                Contact Me
-              </a> */}
-              <a
-                href="https://twitter.com/amberabreudev"
-                target="_blank"
-                rel="noreferrer"
-              >
-                <FontAwesomeIcon icon={faTwitter} />
-              </a>
-              <a
-                href="https://www.linkedin.com/in/amber-abreu/"
-                target="_blank"
-                rel="noreferrer"
-              >
-                <FontAwesomeIcon icon={faLinkedin} />
-              </a>
-              <a
-                href="https://github.com/AmberAbreu"
-                target="_blank"
-                rel="noreferrer"
-              >
-                <FontAwesomeIcon icon={faGithub} />
-              </a>
+              <h1>I'm Amber Abreu</h1>
+              <h2>A Software Developer from Brooklyn, NY</h2>
+              <div className="buttons">
+                <a href="#about" className="btn-primary">
+                  About Me
+                </a>
+                <a href="#projects" className="btn-secondary">
+                  Contact Me
+                </a>
+              </div>
+              <div className="icons">
+                <a
+                  href="https://twitter.com/amberabreudev"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <FontAwesomeIcon icon={faTwitter} />
+                </a>
+                <a
+                  href="https://www.linkedin.com/in/amber-abreu/"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <FontAwesomeIcon icon={faLinkedin} />
+                </a>
+                <a
+                  href="https://github.com/AmberAbreu"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <FontAwesomeIcon icon={faGithub} />
+                </a>
+              </div>
             </div>
             <StaticImage
-              src="../images/croppedamber.png"
-              alt="image of Amber"
+              src="../images/amber-selfie.png"
+              alt="Amber"
               placeholder="blurred"
               layout="fixed"
+              width={400}
             />
           </div>
         </div>
