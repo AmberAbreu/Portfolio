@@ -198,7 +198,7 @@ const Home = () => {
 			</div>
 
 			<div className="preview">
-				<h1>Projects</h1>
+				<h1>Experience</h1>
 				<div className="preview-cards">
 					{projects.map(project => <BlogCard title={project.name} description={project.description} image={project.image} website={project.website} isProject={true} />)}
 				</div>
