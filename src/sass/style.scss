@@ -94,37 +94,56 @@ nav {
   }
 }
 
-.projects {
-  display: flex;
-  flex: 0 1 calc(50% - 1em);
-  align-content: center;
-  justify-content: center;
-  position: relative;
-  .project-links {
-    display: none;
-  }
+.preview {
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
 
-  .project:hover {
-    display: flex;
-    justify-content: center;
-    align-content: center;
-
-    .homepage {
-      filter: blur(4px);
-      //transform: scale(1.2, 1.2);
-      transition: 0.5s ease-in-out;
-    }
-
-    .project-links {
-      display: inline-block;
-      position: absolute;
-      top: 50%;
-    }
-  }
-
-  img {
-    height: 400px;
-  }
+	&-cards {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-around;
+	
+		.card {
+			display: grid;
+			grid-template-columns: 300px;
+			grid-template-rows: 210px 210px;
+			grid-template-areas: "image" "text" "stats";
+			border-radius: 18px;
+			box-shadow: 5px 5px 15px rgba(0,0,0,0.9);
+			text-align: center;
+			transition: 0.5s ease;
+			cursor: pointer;
+			margin:30px;
+			
+			.card-image {
+				grid-area: image;
+				border-top-left-radius: 15px;
+				border-top-right-radius: 15px;
+				background-size: cover;
+				background-position: center;
+			  }
+			  .card-text {
+				grid-area: text;
+				margin: 25px;
+			
+			  }
+	
+			  .card-text p {
+				color: grey;
+				font-size:15px;
+				font-weight: 300;
+			  }
+			  .card-text h2 {
+				margin-top:0px;
+				font-size:28px;
+			}
+		}
+		.card:hover {
+			transform: scale(1.15);
+			box-shadow: 5px 5px 15px rgba(0,0,0,0.6);
+		  }
+	}
 }
 
 .showcase {
@@ -153,87 +172,70 @@ nav {
       .buttons {
         margin: 40px 0 40px 0;
       }
+	  .icons {
+		a:hover {
+			color: $secondary-color;
+		  }
+		  a:visited {
+			text-decoration: none;
+		  }
+	  }
+	 
     }
   }
 }
 
-.tech-stack {
-  align-items: center;
-  display: flex;
-  justify-content: center;
-  background-color: $gray;
-  height: 200px;
-  margin-bottom: 20px;
-}
+.logo-slider {
+   
+	$min-image-size: 50px;
+	$max-image-size: 150px;
+	
+	--image-size: #{$max-image-size};
+	
+	padding: 20px;
+	overflow: hidden;
+	// max-width: 1200px;
+	width: 100%;
+	margin: 0 auto;	
+	position: relative;
+	display: flex;
 
-@-webkit-keyframes scroll {
-  0% {
-    -webkit-transform: translateX(0);
-    transform: translateX(0);
-  }
-  100% {
-    -webkit-transform: translateX(calc(-180px * 10));
-    transform: translateX(calc(-180px * 10));
-  }
-}
+	&:hover div {
+		animation-play-state: paused;
+	}	  
+	div { 
+		display: flex;
+		position: relative;
+		animation: marquee 13s linear infinite;
+		justify-content: space-around;
+	}
+	img {
+		display: block;
+		min-width: var(--image-size);
+		height: var(--image-size);
+		margin: 0 1vw;
+	}
+	
+	&:after {
+		content: "";
+		  position: absolute;
 
-@keyframes scroll {
-  0% {
-    -webkit-transform: translateX(0);
-    transform: translateX(0);
+		  left: 0;
+		  top: 0;
+		  background: linear-gradient(to right, white, rgba(white, 0) 80px, rgba(white, 0) calc(100% - 80px), white);
+	  }
+	
+	@media (max-width:900px) {
+	  --image-size: #{$min-image-size};
+	  --image-size: min(max(#{$min-image-size}, 10vw), #{$max-image-size});
+	  }
+  
   }
-  100% {
-    -webkit-transform: translateX(calc(-180px * 10));
-    transform: translateX(calc(-180px * 10));
+  
+  @keyframes marquee {
+	  0%   { transform: translateX(0%); }
+	  100% { transform: translateX(-100%); }
   }
-}
-
-$animationSpeed: 40s;
-
-.slider {
-  box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.125);
-  margin: auto;
-  overflow: hidden;
-  position: relative;
-  height: 150px;
-  width: 100%;
-  background-color: $gray;
-
-  &::before,
-  &::after {
-    content: "";
-    height: 128px;
-    position: absolute;
-    width: 120px;
-    z-index: 2;
-  }
-
-  &::after {
-    right: -1px;
-    top: 0;
-    -webkit-transform: rotateZ(180deg);
-    transform: rotateZ(180deg);
-  }
-
-  &::before {
-    left: 0;
-    top: 0;
-  }
-  img {
-    margin: 20px;
-    width: 180px;
-    height: 128px;
-    background-color: $gray;
-  }
-}
-
-.sliderTrack {
-  -webkit-animation: scroll $animationSpeed linear infinite;
-  animation: scroll $animationSpeed linear infinite;
-  display: flex;
-  width: calc(180px * 20);
-  background-color: $gray;
-}
 
 @import "utilities";
 @import "buttons";
