@@ -18,8 +18,10 @@ import redux from "../images/tech/redux.svg";
 import sass from "../images/tech/sass.svg";
 
 import Link from "gatsby";
+
 import givEth from "../images/giveth.png";
 import alacranstudio from "../images/alacranstudio.png";
+import cody from '../images/cody.png'
 import TechStack from "../components/TechStack";
 import BlogCard from '../components/BlogCard'
 import Layout from "../components/Layout";
@@ -116,6 +118,27 @@ const Home = () => {
 
 	const projects = [
 		{
+			id: 2,
+			name: "Alacran Studio",
+			description:
+				"Working as a contributor creating websites for small businesses",
+			image: alacranstudio,
+			date: "July 2021",
+			github: "https://github.com/graceshopper-Team5/graceshopper",
+			website: "https://alacrandigitalservices.com/",
+
+		},
+		{
+			id: 3,
+			name: "Cody's Portfolio",
+			description:
+				"A learning module made to teach bootcamp students how to create a simple personal portfolio site using Gatsby.js and Netlify",
+			image: cody,
+			date: "Dec 2021",
+			github: "https://naughty-turing-499ad5.netlify.app/",
+			website: "https://github.com/AmberAbreu/codyportfolio-boilerplate",
+		},
+		{
 			id: 1,
 			name: "givEth",
 			description:
@@ -125,16 +148,7 @@ const Home = () => {
 			github: "https://github.com/givEth-capstone/givEth/",
 			website: "https://giv-eth.herokuapp.com/",
 		},
-		{
-			id: 2,
-			name: "Alacran Studio",
-			description:
-				"Working as a contributor creating websites for small businesses",
-			image: alacranstudio,
-			date: "July 2021",
-			github: "https://github.com/graceshopper-Team5/graceshopper",
-			website: "https://alacrandigitalservices.com/",
-		},
+
 	];
 
 	console.log(data)
@@ -205,9 +219,12 @@ const Home = () => {
 			</div>
 
 
+			<div className="preview">
+				<h1>Tech Stack</h1>
+			</div>
 
-			<p>Tech Stack</p>
 			<div className="logo-slider">
+
 				<div>
 
 					{technologies.map((technology) => (
