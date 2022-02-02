@@ -1,28 +1,38 @@
 @media(max-width: 700px) {
-  .about {
-    img {
-      display: none;
-    }
-    &-content {
-      width: 90%;
-    &-text {
-      width: 100%;
-      height: 100%;
-    }
-    }
-  }
+//   .about {
+//     img {
+//       display: none;
+//     }
+//     &-content {
+//       width: 90%;
+//     &-text {
+//       width: 100%;
+//       height: 100%;
+//     }
+//     }
+//   }
   .showcase {
-    height: 400px;
+    height: 700px;
     &-content {
+		
       text-align: center;
-
+	  flex-direction: column;
+	  .gatsby-image-wrapper {
+		  display: none;
+	  }
       img {
         display: none;
       }
     }
   }
-  .projects {
-    flex-direction: column;
+  .preview {
+	  h1 {
+		  padding: 0 50px 0 50px;
+		  margin: 15px;
+	  }
+	  &-cards{
+		  flex-direction: column;
+	  }
     img{
       width: 100%;
       height: 250px;

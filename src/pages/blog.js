@@ -27,7 +27,7 @@ const BlogPage = () => {
 			<div className="preview">
 				<h1>Blog Posts</h1>
 				<div className="standardSpacing">
-					<div className="preview-cards" > {blogPreviews} </div>
+					<div className="preview-cards" >{blogPreviews}</div>
 				</div>
 			</div>
 		</Layout>

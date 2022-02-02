@@ -17,7 +17,7 @@ import node from "../images/tech/nodejs.svg";
 import redux from "../images/tech/redux.svg";
 import sass from "../images/tech/sass.svg";
 
-import Link from "gatsby";
+import { Link } from "gatsby";
 
 import givEth from "../images/giveth.png";
 import alacranstudio from "../images/alacranstudio.png";
@@ -183,7 +183,11 @@ const Home = () => {
 				<div className="preview-cards">
 					{data.allNotion.edges.filter(item => item.node.properties.type.value[0].name === 'Blog').map(item => <BlogCard title={item.node.title} description={item.node.properties.description.value} image={item.node.properties.image.value} slug={item.node.properties.slug.value} key={item.node.id} />)}
 				</div>
-				<button>View All</button>
+
+				<div className="buttons">
+					<Link to={`/blog`} className="btn-primary">View All</Link>
+				</div>
+
 			</div>
 
 			<div className="preview">
