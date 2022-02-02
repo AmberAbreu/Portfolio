@@ -20,7 +20,7 @@
     "@fortawesome/free-regular-svg-icons": "^5.15.4",
     "@fortawesome/free-solid-svg-icons": "^5.15.4",
     "@fortawesome/react-fontawesome": "^0.1.15",
-    "gatsby": "^4.2.0",
+    "gatsby": "^4.6.1",
     "gatsby-image": "^3.11.0",
     "gatsby-plugin-fontawesome-css": "^1.1.0",
     "gatsby-plugin-gatsby-cloud": "^4.2.0",
