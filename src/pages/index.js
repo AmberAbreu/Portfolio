@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "../sass/style.scss";
 import { StaticImage } from "gatsby-plugin-image";
-import { useStaticQuery, graphql } from 'gatsby'
+import { getAllBlogs } from '../utils/getAllBlogs'
 
 import html from "../images/tech/html5.svg";
 import css from "../images/tech/css3.svg";
@@ -64,34 +64,8 @@ function useWindowDimensions() {
 
 
 const Home = () => {
-	const data = useStaticQuery(graphql`
-	query MyQuery {
-		allNotion {
-		  edges {
-			node {
-			  id
-			  title
-			  properties {
-				description {
-				  value
-				}
-				image {
-				  value
-				}
-				slug {
-				  value
-				}
-				type {
-				  value {
-					name
-				  }
-				}
-			  }
-			}
-		  }
-		}
-	  }
-	`)
+
+	const data = getAllBlogs()
 
 	const technologies = [
 		html,
@@ -124,7 +98,7 @@ const Home = () => {
 				"Working as a contributor creating websites for small businesses",
 			image: alacranstudio,
 			date: "July 2021",
-			github: "https://github.com/graceshopper-Team5/graceshopper",
+			github: "https://github.com/Alacran-Digital-Services",
 			website: "https://alacrandigitalservices.com/",
 
 		},
@@ -135,8 +109,8 @@ const Home = () => {
 				"A learning module made to teach bootcamp students how to create a simple personal portfolio site using Gatsby.js and Netlify",
 			image: cody,
 			date: "Dec 2021",
-			github: "https://naughty-turing-499ad5.netlify.app/",
-			website: "https://github.com/AmberAbreu/codyportfolio-boilerplate",
+			website: "https://naughty-turing-499ad5.netlify.app/",
+			github: "https://github.com/AmberAbreu/codyportfolio-boilerplate",
 		},
 		{
 			id: 1,
@@ -209,12 +183,13 @@ const Home = () => {
 				<div className="preview-cards">
 					{data.allNotion.edges.filter(item => item.node.properties.type.value[0].name === 'Blog').map(item => <BlogCard title={item.node.title} description={item.node.properties.description.value} image={item.node.properties.image.value} slug={item.node.properties.slug.value} key={item.node.id} />)}
 				</div>
+				<button>View All</button>
 			</div>
 
 			<div className="preview">
 				<h1>Experience</h1>
 				<div className="preview-cards">
-					{projects.map(project => <BlogCard title={project.name} description={project.description} image={project.image} website={project.website} isProject={true} />)}
+					{projects.map(project => <BlogCard title={project.name} description={project.description} image={project.image} github={project.github} website={project.website} />)}
 				</div>
 			</div>
 

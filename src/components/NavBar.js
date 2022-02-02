@@ -15,14 +15,17 @@ export default function NavBar() {
 	return (
 		<nav>
 			<div>
-				<StaticImage
-					src="../images/logo.png"
-					alt="logo"
-					placeholder="blurred"
-					layout="fixed"
-					width={150}
-					height={150}
-				/>
+				<Link style={{ margin: '0' }} to="/">
+					<StaticImage
+						src="../images/logo.png"
+						alt="logo"
+						placeholder="blurred"
+						layout="fixed"
+						width={150}
+						height={150}
+					/>
+				</Link>
+
 			</div>
 			<ul>
 				<li>
@@ -32,7 +35,7 @@ export default function NavBar() {
 					</Link>
 				</li>
 				<li>
-					<Link to="blog">
+					<Link to="/blog">
 						<FontAwesomeIcon icon={faNewspaper} />
 						<p>Blog</p>
 					</Link>

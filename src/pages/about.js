@@ -1,8 +1,11 @@
 import React from "react";
+import Layout from "../components/Layout";
+import { StaticImage } from "gatsby-plugin-image";
 
 export default function about() {
 	return (
-		<div>
+		<Layout>
+
 			<p>
 				I was born and raised in Brooklyn, NY. I'm a huge foodie and on my free
 				time you can catch me trying new cuisine.
@@ -23,6 +26,13 @@ export default function about() {
 				how I am creating this portfolio. I also plan to work on my side
 				projects that include learning React Native, Solidity, and Web3.
 			</p>
-		</div>
+			<StaticImage
+				src="../images/amber-selfie.png"
+				alt="Amber"
+				placeholder="blurred"
+				layout="fixed"
+				width={400}
+			/>
+		</Layout>
 	);
 }
