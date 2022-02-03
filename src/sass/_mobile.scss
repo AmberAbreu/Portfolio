@@ -1,4 +1,14 @@
 @media(max-width: 700px) {
+	.aboutPage {
+		justify-content: center;
+		.gatsby-image-wrapper {
+			display: none;
+		}
+		&-content {
+			text-align: center;
+			
+		}
+	}
   .blog-post-container {
 	  .preview {
 		  img{
@@ -28,6 +38,9 @@
 	  h1 {
 		  padding: 0 50px 0 50px;
 		  margin: 15px;
+	  }
+	  .backHeader {
+		  flex-direction: column;
 	  }
 	  &-cards{
 		  flex-direction: column;

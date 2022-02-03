@@ -53,7 +53,6 @@ export default function about() {
 					width={400}
 				/>
 			</div>
-
 		</Layout>
 	);
 }
