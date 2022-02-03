@@ -30,13 +30,13 @@ export default function NavBar() {
 			<ul>
 				<li>
 					<Link to="/about">
-						<FontAwesomeIcon icon={faUser} />
+						<FontAwesomeIcon icon={faUser} size="lg" />
 						<p>About</p>
 					</Link>
 				</li>
 				<li>
 					<Link to="/blog">
-						<FontAwesomeIcon icon={faNewspaper} />
+						<FontAwesomeIcon icon={faNewspaper} size="lg" />
 						<p>Blog</p>
 					</Link>
 				</li>

@@ -20,3 +20,10 @@
   @extend %btn;
   @include set-background($secondary-color)
 }
+
+.btn-decorated {
+	@extend %btn;
+	background-color: $primary-color;
+	border: solid $light-color;
+	margin: 0 0 2rem 0;
+}

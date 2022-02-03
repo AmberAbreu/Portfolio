@@ -1,4 +1,4 @@
-import { useStaticQuery, graphql, Link } from "gatsby";
+import { useStaticQuery, graphql, Link, navigate } from "gatsby";
 import * as React from "react"
 
 
@@ -23,9 +23,14 @@ const BlogPage = () => {
 
 	return (
 		<Layout>
-			<Link to="/" className="btn-secondary" style={{ margin: '25px 0 0 50px', }}><FontAwesomeIcon icon={faLongArrowAltLeft} style={{ backgroundColor: 'black' }} /></Link>
 			<div className="preview">
-				<h1>Blog Posts</h1>
+				<div className="backHeader">
+					<FontAwesomeIcon icon={faLongArrowAltLeft} onClick={() => { navigate(-1) }} size="lg" />
+					<h1>Blog Posts</h1>
+
+				</div>
+				<hr
+				/>
 				<div className="standardSpacing">
 					<div className="preview-cards" >{blogPreviews}</div>
 				</div>

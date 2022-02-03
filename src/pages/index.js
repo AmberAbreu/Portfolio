@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
+
 import "../sass/style.scss";
 import { StaticImage } from "gatsby-plugin-image";
 import { getAllBlogs } from '../utils/getAllBlogs'
@@ -22,7 +23,7 @@ import { Link } from "gatsby";
 import givEth from "../images/giveth.png";
 import alacranstudio from "../images/alacranstudio.png";
 import cody from '../images/cody.png'
-import TechStack from "../components/TechStack";
+
 import BlogCard from '../components/BlogCard'
 import Layout from "../components/Layout";
 
@@ -33,10 +34,6 @@ import {
 	faTwitter,
 	faGithub,
 } from "@fortawesome/free-brands-svg-icons";
-
-
-
-
 
 
 const Home = () => {
@@ -58,13 +55,6 @@ const Home = () => {
 		prisma,
 		sass,
 	];
-	const [buttonPopup, setButtonPopup] = useState(false);
-	const [curProj, setCurProj] = useState("");
-	function handleClick(proj) {
-		setButtonPopup(true);
-		setCurProj(proj);
-	}
-
 
 	const projects = [
 		{
@@ -101,10 +91,8 @@ const Home = () => {
 
 	];
 
-	console.log(data)
 	return (
 		<Layout>
-
 			<header className="showcase">
 				<div className="container">
 					<div className="showcase-content">
@@ -112,12 +100,12 @@ const Home = () => {
 							<h1>I'm Amber Abreu</h1>
 							<h2>Software Developer from Brooklyn, NY</h2>
 							<div className="buttons">
-								<a href="#about" className="btn-primary">
+								{/* <Link to="/about" className="btn-primary">
 									About Me
-								</a>
+								</Link>
 								<a href="#projects" className="btn-secondary">
 									Contact Me
-								</a>
+								</a> */}
 							</div>
 							<div className="icons">
 								<a
@@ -125,21 +113,21 @@ const Home = () => {
 									target="_blank"
 									rel="noreferrer"
 								>
-									<FontAwesomeIcon icon={faTwitter} />
+									<FontAwesomeIcon icon={faTwitter} size="lg" />
 								</a>
 								<a
 									href="https://www.linkedin.com/in/amber-abreu/"
 									target="_blank"
 									rel="noreferrer"
 								>
-									<FontAwesomeIcon icon={faLinkedin} />
+									<FontAwesomeIcon icon={faLinkedin} size="lg" />
 								</a>
 								<a
 									href="https://github.com/AmberAbreu"
 									target="_blank"
 									rel="noreferrer"
 								>
-									<FontAwesomeIcon icon={faGithub} />
+									<FontAwesomeIcon icon={faGithub} size="lg" />
 								</a>
 							</div>
 						</div>
@@ -156,46 +144,48 @@ const Home = () => {
 
 			<div className="preview">
 				<h1>Blog Posts</h1>
+				<hr
+				/>
 				<div className="preview-cards">
 					{data.allNotion.edges.filter(item => item.node.properties.type.value[0].name === 'Blog').map(item => <BlogCard title={item.node.title} description={item.node.properties.description.value} image={item.node.properties.image.value} slug={item.node.properties.slug.value} key={item.node.id} />)}
 				</div>
 
 				<div className="buttons">
-					<Link to={`/blog`} className="btn-primary">View All</Link>
+					<Link to={`/blog`} className="btn-decorated">View All</Link>
 				</div>
 
 			</div>
 
 			<div className="preview">
 				<h1>Experience</h1>
+				<hr
+				/>
 				<div className="preview-cards">
-					{projects.map(project => <BlogCard title={project.name} description={project.description} image={project.image} github={project.github} website={project.website} />)}
+					{projects.map(project => <BlogCard key={project.id} title={project.name} description={project.description} image={project.image} github={project.github} website={project.website} />)}
 				</div>
 			</div>
 
 
 			<div className="preview">
 				<h1>Tech Stack</h1>
+				<hr
+				/>
 			</div>
-
 			<div className="logo-slider">
-
 				<div>
-
 					{technologies.map((technology) => (
-						<img src={technology} />
+						<img src={technology} key={technology} />
 					))}
 				</div>
 				<div>
-
 					{technologies.map((technology) => (
-						<img src={technology} />
+						<img key={technology} src={technology} alt={technology} />
 					))}
 				</div>
-
 			</div>
 
 		</Layout>
+
 	);
 };
 
