@@ -1,30 +1,37 @@
 import { useStaticQuery, graphql } from "gatsby";
 
-export function getAllBlogs() {
+export function GetAllBlogs() {
 	return useStaticQuery(graphql`
 	query MyQuery {
 		allNotion {
-		  edges {
-			node {
-			  id
-			  title
-			  properties {
-				description {
-				  value
+		  nodes {
+			id
+			title
+			properties {
+			  content {
+				value
+			  }
+			  description {
+				value
+			  }
+			  image {
+				value
+			  }
+			  slug {
+				value
+			  }
+			  type {
+				value {
+				  name
 				}
-				image {
-				  value
-				}
-				slug {
-				  value
-				}
-				type {
-				  value {
-					name
-				  }
+			  }
+			  date {
+				value {
+				  start(formatString: "MM/DD/yyy")
 				}
 			  }
 			}
+			markdownString
 		  }
 		}
 	  }

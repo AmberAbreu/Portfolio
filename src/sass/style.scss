@@ -1,5 +1,53 @@
 @import "config";
 
+@mixin flag ($bg: #72879a, $color:#fff, $direction:right, $tail-length: .8em, $build-flag: true) {
+	// ======= Relative Variables =======
+	$p: .3em;
+	
+	// ======= Flag Body =======
+	@if $build-flag {
+	  // ~~ Display ~~
+	  display: inline-block;
+	  // ~~ Box Layout ~~
+	  padding: $p;
+	  padding-#{$direction}: $p;
+	  // ~~ Positioning ~~
+	  margin-right: 16em;
+	  position: relative;
+	  border-top-left-radius: 15px;
+	  // ~~ Typography ~~
+	  text-align: center;
+	  vertical-align: middle;
+	  line-height: 1;
+	}
+	// ~~ Themeing ~~
+	color: $color;
+	background: $bg;
+	
+	// ======= Flag Tails =======
+	&:before,
+	&:after {
+	  @if $build-flag {
+		content: '';
+		width: 0;
+		height: 0;
+		border-#{$direction}: $tail-length solid transparent;
+		#{$direction}: -#{$tail-length};
+	  position: absolute;
+	  top:0;
+	}
+	border-top: (.5em + $p) solid $bg;
+  }
+  &:after {
+	@if $build-flag {
+	  top: auto;
+	  bottom: 0;
+	}
+	border-top: none;
+	border-bottom: (.5em + $p) solid $bg;
+  }
+  };
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -52,6 +100,9 @@ p {
     height: 400px;
     background-color: $dark-color;
     align-content: center;
+	p{
+		margin-bottom: 20px;
+	}
     &-text {
       width: 55%;
       height: 300px;
@@ -115,6 +166,9 @@ nav {
 		width: 20%;
 		height: 3.5px;
 	}
+	.description {
+		margin: 10px;
+	}
 	.backHeader {
 		display: flex;
 		justify-content: space-between;
@@ -125,10 +179,15 @@ nav {
 			margin: 30px;
 		}
 	}
+	.blog-post-content {
+		p {
+			margin: 20px;
+		}
+	}
 	
 
 	img {
-		width: 40%;
+		width: 80%;
 		height: 500px;
 	}
 	
@@ -156,6 +215,10 @@ nav {
 				border-top-right-radius: 15px;
 				background-size: cover;
 				background-position: center;
+				justify-content: start;
+				.new {
+					@include flag($bg: #11C40A );
+				}
 			}
 			.card-text {
 				grid-area: text;
@@ -273,8 +336,18 @@ nav {
 	  --image-size: min(max(#{$min-image-size}, 10vw), #{$max-image-size});
 	  }
   
+
+	  
   }
   
+
+  .standardSpacing {
+    margin: 0 auto;
+    max-width: 960px;
+    padding: 1rem 1.5rem;
+}
+
+
   @keyframes marquee {
 	  0%   { transform: translateX(0%); }
 	  100% { transform: translateX(-100%); }

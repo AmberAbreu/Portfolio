@@ -3,6 +3,7 @@ import React from "react"
 import { navigate } from "gatsby";
 
 import Layout from "../components/Layout"
+import ReactMarkdown from 'react-markdown'
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -12,10 +13,9 @@ import {
 
 export default function Template({ pageContext }) {
 	const { post } = pageContext
-	console.log(post)
 	return (
 		<Layout>
-			<div >
+			<div className="standardSpacing" >
 
 				<div className="blog-post-container">
 					<div className="preview">
@@ -24,12 +24,15 @@ export default function Template({ pageContext }) {
 							<h1>{post.title}</h1>
 						</div>
 						<h3>written by Amber Abreu</h3>
+						<h4>{post.properties.date.value.start}</h4>
 						<img src={post.properties.image.value} alt="blog" />
-						{/* <h4>{post.properties.date.value.start}</h4> */}
-						<span> <i> {post.properties.description.value} </i></span>
+						<span className="description"> <i> {post.properties.description.value} </i></span>
 
-						<div className="blog-post-content" />
-						{/* {post.properties.body.value} */}
+						<div className="blog-post-content">
+							<ReactMarkdown>{post.properties.content.value}</ReactMarkdown>
+
+						</div>
+
 					</div>
 				</div>
 			</div>

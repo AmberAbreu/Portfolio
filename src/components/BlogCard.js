@@ -1,16 +1,18 @@
 import React from 'react';
 import { Link } from 'gatsby'
 
-export default function BlogCard({ title, description, image, website, github, slug }) {
+export default function BlogCard({ title, description, image, website, github, recent, slug }) {
 
 	return (
 
 		<div className="card">
-			<div className="card-image" style={{ background: `url("${image}") center`, backgroundPosition: 'center center', backgroundSize: 'cover' }}></div>
+
+			<div className="card-image" style={{ background: `url("${image}") center`, backgroundPosition: 'center center', backgroundSize: 'cover' }}>
+				{recent && <span className="new">New!</span>}
+			</div>
 			<div className="card-text">
 				<h2>{title}</h2>
 				<p>{description}</p>
-
 			</div>
 
 			<div className="card-stats">

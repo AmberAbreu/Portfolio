@@ -8,17 +8,17 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 
 
-import { getAllBlogs } from '../utils/getAllBlogs'
+import { GetAllBlogs } from '../utils/getAllBlogs'
 
 import BlogCard from "../components/BlogCard";
 import Layout from "../components/Layout";
 
 const BlogPage = () => {
 
-	const data = getAllBlogs()
+	const data = GetAllBlogs()
 
-	const blogPreviews = data.allNotion.edges.map((item) =>
-		<BlogCard title={item.node.title} description={item.node.properties.description.value} image={item.node.properties.image.value} slug={item.node.properties.slug.value} key={item.node.id} />
+	const blogPreviews = data.allNotion.nodes.map((item) =>
+		<BlogCard title={item.title} description={item.properties.description.value} recent={true} image={item.properties.image.value} slug={item.properties.slug.value} key={item.id} />
 	)
 
 	return (

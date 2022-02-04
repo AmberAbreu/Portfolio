@@ -12,7 +12,12 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
 	  {
 		allNotion {
 			nodes {
+			  id
+			  title
 			  properties {
+				content {
+				  value
+				}
 				description {
 				  value
 				}
@@ -27,12 +32,15 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
 					name
 				  }
 				}
+				date {
+				  value {
+					start(formatString: "MM/DD/yyy")
+				  }
+				}
 			  }
-			  id
-			  title
 			}
 		  }
-	  }
+	}
 	`)
 
 	// Handle errors

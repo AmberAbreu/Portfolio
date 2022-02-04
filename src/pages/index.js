@@ -2,7 +2,7 @@ import React from "react";
 
 import "../sass/style.scss";
 import { StaticImage } from "gatsby-plugin-image";
-import { getAllBlogs } from '../utils/getAllBlogs'
+import { GetAllBlogs } from '../utils/getAllBlogs'
 
 import html from "../images/tech/html5.svg";
 import css from "../images/tech/css3.svg";
@@ -37,9 +37,7 @@ import {
 
 
 const Home = () => {
-
-	const data = getAllBlogs()
-
+	const data = GetAllBlogs()
 	const technologies = [
 		html,
 		css,
@@ -147,7 +145,7 @@ const Home = () => {
 				<hr
 				/>
 				<div className="preview-cards">
-					{data.allNotion.edges.filter(item => item.node.properties.type.value[0].name === 'Blog').map(item => <BlogCard title={item.node.title} description={item.node.properties.description.value} image={item.node.properties.image.value} slug={item.node.properties.slug.value} key={item.node.id} />)}
+					{data.allNotion.nodes.filter(item => item.properties.type.value[0].name === 'Blog').map(item => <BlogCard title={item.title} description={item.properties.description.value} image={item.properties.image.value} slug={item.properties.slug.value} recent={true} key={item.id} />)}
 				</div>
 
 				<div className="buttons">
@@ -157,7 +155,7 @@ const Home = () => {
 			</div>
 
 			<div className="preview">
-				<h1>Experience</h1>
+				<h1>Projects</h1>
 				<hr
 				/>
 				<div className="preview-cards">
