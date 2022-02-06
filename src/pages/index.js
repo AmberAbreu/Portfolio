@@ -141,6 +141,15 @@ const Home = () => {
 			</header>
 
 			<div className="preview">
+				<h1>Projects</h1>
+				<hr
+				/>
+				<div className="preview-cards">
+					{projects.map(project => <BlogCard key={project.id} title={project.name} description={project.description} image={project.image} github={project.github} website={project.website} />)}
+				</div>
+			</div>
+
+			<div className="preview">
 				<h1>Blog Posts</h1>
 				<hr
 				/>
@@ -152,15 +161,6 @@ const Home = () => {
 					<Link to={`/blog`} className="btn-decorated">View All</Link>
 				</div>
 
-			</div>
-
-			<div className="preview">
-				<h1>Projects</h1>
-				<hr
-				/>
-				<div className="preview-cards">
-					{projects.map(project => <BlogCard key={project.id} title={project.name} description={project.description} image={project.image} github={project.github} website={project.website} />)}
-				</div>
 			</div>
 
 
